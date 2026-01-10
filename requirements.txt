@@ -1,0 +1,22 @@
+# LangGraph Multi-Agent Research Paper Analyzer
+# Python 3.10+
+
+# Core LangGraph and LangChain dependencies
+langgraph>=0.2.0
+langchain>=0.1.0
+langchain-community>=0.0.20
+
+# LLM Integration
+langchain-ollama>=0.0.1
+
+# PDF Processing
+pypdf>=4.1.0
+
+# Utilities
+python-dotenv>=1.0.1
+
+# Optional: For enhanced PDF processing
+pdfplumber>=0.10.0
+
+# Optional: For better text extraction
+pytesseract>=0.3.10  # Requires tesseract-ocr system package
