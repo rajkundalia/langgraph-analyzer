@@ -65,6 +65,20 @@ START → Claims Extractor → Methodology Analyzer → Limitations Finder
 - Real-time progress feedback
 - Enhanced user experience
 
+## Flow:
+
+```mermaid
+graph TD
+    START --> claims_extractor
+    claims_extractor --> methodology_analyzer
+    methodology_analyzer --> limitations_finder
+    limitations_finder --> synthesizer
+    synthesizer --> human_review
+    human_review --> check_approval
+    check_approval -->|approved| END
+    check_approval -->|rejected| END
+```
+
 ## Prerequisites
 
 ### Required Software
