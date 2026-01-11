@@ -10,6 +10,7 @@ import re
 from pathlib import Path
 from typing import Optional, Tuple
 from datetime import datetime
+from pypdf import PdfReader
 
 
 def load_pdf_text(pdf_path: str) -> Tuple[str, str]:
@@ -33,11 +34,6 @@ def load_pdf_text(pdf_path: str) -> Tuple[str, str]:
         >>> text, title = load_pdf_text("data/papers/attention.pdf")
         >>> print(f"Loaded: {title} ({len(text)} characters)")
     """
-
-    try:
-        from pypdf import PdfReader
-    except ImportError:
-        raise ImportError("pypdf is required. Install with: pip install pypdf")
 
     # Validate file exists
     if not os.path.exists(pdf_path):
