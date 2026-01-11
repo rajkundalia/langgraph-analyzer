@@ -1,20 +1,3 @@
-"""
-Claims Extractor Agent
-
-This agent is the first in the analysis pipeline. Its role is to identify and
-extract the key claims, hypotheses, and contributions from the research paper.
-
-Role in Workflow:
-- First agent to process the paper after initialization
-- Provides foundation for other agents' analysis
-- Focuses on WHAT the paper claims to contribute
-
-LangGraph Node Behavior:
-- Receives State with paper_text
-- Returns State with 'claims' field populated
-- Streams output token-by-token for real-time feedback
-"""
-
 from langchain_ollama import ChatOllama
 from ..state import State
 
@@ -46,11 +29,10 @@ def claims_extractor_agent(state: State) -> State:
     print("Extracting key claims and hypotheses...")
     print("=" * 70)
 
-    # Initialize LLM with streaming enabled
-    # streaming=True allows us to display output in real-time
+    # Initialize LLM
+    # The .stream() method used below handles the streaming behavior.
     llm = ChatOllama(
         model="llama3",
-        streaming=True,
         temperature=0.3  # Lower temperature for more focused extraction
     )
 
