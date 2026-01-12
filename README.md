@@ -23,23 +23,23 @@ START → Claims Extractor → Methodology Analyzer → Limitations Finder
 
 ### Agent Roles
 
-1. **Claims Extractor Agent** 🔍
+1. **Claims Extractor Agent** 
    - Identifies 3-5 key claims and hypotheses
    - Extracts main contributions of the paper
 
-2. **Methodology Analyzer Agent** 📋
+2. **Methodology Analyzer Agent** 
    - Analyzes research methods and approach
    - Evaluates data sources and experimental design
 
-3. **Limitations Finder Agent** ⚠️
+3. **Limitations Finder Agent** 
    - Identifies study limitations and weaknesses
    - Provides constructive critique
 
-4. **Synthesizer Agent** 📝
+4. **Synthesizer Agent** 
    - Combines all analyses into coherent report
    - Creates executive summary with key insights
 
-5. **Human Review Node** 👤
+5. **Human Review Node** 
    - Pauses execution for human approval
    - Allows accept/reject decision
 
@@ -129,8 +129,7 @@ pip install -r requirements.txt
 
 ### 4. Set Up Project Structure
 ```bash
-mkdir -p data/papers outputs src/agents examples
-touch src/__init__.py src/agents/__init__.py
+mkdir -p outputs
 ```
 
 ### 5. Add Sample PDF
@@ -141,7 +140,7 @@ Place a research paper PDF in `data/papers/` directory.
 ### Basic Usage
 
 ```bash
-python main.py data/papers/your_paper.pdf
+python main.py data/papers/NIPS-2017-attention-is-all-you-need-Paper.pdf
 ```
 
 ### Example Session
@@ -351,7 +350,7 @@ Add export nodes:
 - LaTeX academic summary
 - PowerPoint slide deck
 
-## 📚 Project Structure
+## Project Structure
 
 ```
 langgraph-analyzer/
@@ -378,7 +377,7 @@ langgraph-analyzer/
 └── main.py                 # CLI interface
 ```
 
-## 🧪 Testing
+## Testing
 
 ### Test Individual Agents
 
@@ -408,7 +407,7 @@ for event in graph.stream(initial_state):
     print(event)
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Ollama Connection Issues
 
@@ -441,21 +440,19 @@ llm = ChatOllama(model="llama3", streaming=True, temperature=0.7)
 ## 📖 Learning Resources
 
 ### LangGraph Documentation
-- [Official LangGraph Docs](https://python.langchain.com/docs/langgraph)
-- [LangGraph Tutorials](https://github.com/langchain-ai/langgraph/tree/main/examples)
-- [Human-in-the-Loop Guide](https://python.langchain.com/docs/langgraph/how-tos/human-in-the-loop)
+- [Official LangGraph Docs](https://docs.langchain.com/oss/python/langgraph/overview)
 
 ### Key Concepts
-- [State Management](https://python.langchain.com/docs/langgraph/concepts/low_level#state)
-- [Checkpointing](https://python.langchain.com/docs/langgraph/concepts/persistence)
-- [Streaming](https://python.langchain.com/docs/langgraph/how-tos/streaming)
-- [Conditional Edges](https://python.langchain.com/docs/langgraph/how-tos/branching)
+- [State Management](https://docs.langchain.com/oss/python/langchain/overview#state)
+- [Checkpointing](https://docs.langchain.com/oss/javascript/langgraph/persistence#persistence)
+- [Streaming](https://docs.langchain.com/oss/javascript/langgraph/streaming#streaming)
+- [Conditional Edges](https://docs.langchain.com/oss/python/langchain/streaming/frontend#branching)
 
 ### Related Projects
-- [LangChain Documentation](https://python.langchain.com/)
+- [LangChain Documentation](https://docs.langchain.com/oss/python/langchain/overview)
 - [Ollama Documentation](https://github.com/ollama/ollama)
 
-## 🤝 Contributing
+## Contributing
 
 Ideas for contributions:
 1. Add more specialized agents
@@ -466,18 +463,17 @@ Ideas for contributions:
 6. Add citation extraction and verification
 7. Create comparative analysis mode
 
-## 📄 License
+## License
 
 MIT License - Feel free to use and modify for your projects.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Built with [LangGraph](https://github.com/langchain-ai/langgraph)
 - Powered by [Ollama](https://ollama.com/) and Llama 3
-- Inspired by research paper analysis workflows
 
 ---
 
-**Happy Learning! 🚀**
+**Happy Learning!**
 
 For questions or issues, please refer to the LangGraph documentation or create an issue in the project repository.
